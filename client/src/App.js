@@ -7,12 +7,12 @@ const App = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const [searched, setSearched] = useState(false); // Track if search has been performed
+    const [searched, setSearched] = useState(false); 
 
     const handleSearch = async (topic) => {
         setLoading(true);
         setError('');
-        setSearched(true); // Update state to indicate search has been performed
+        setSearched(true); 
         try {
             const response = await axios.post('http://localhost:5000/api/scrape', { topic });
             setArticles(response.data.articles);
